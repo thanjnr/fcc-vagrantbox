@@ -6,7 +6,6 @@ apt-get -y update
 dpkg -s npm &>/dev/null || {
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     apt-get -y install nodejs build-essential
-    ln -s /usr/bin/nodejs /usr/bin/node  
 }
 
 #install mailhog
@@ -24,5 +23,5 @@ sudo -u vagrant -i sh -c `
     cd /vagrant/freeCodeCamp;
     git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git;
     git checkout staging;
-    npm install;
+    npm install --no-bin-links;
 `
