@@ -26,5 +26,5 @@ sudo -u vagrant -i sh -c 'cd /vagrant;git clone https://github.com/thanjnr/freeC
 sudo -u vagrant -i sh -c 'cd /vagrant/freeCodeCamp;git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git;git checkout staging'   
 sudo -u vagrant -i sh -c 'cd /vagrant/freeCodeCamp; npm install'
 sudo -u vagrant -i sh -c 'cp /vagrant/freeCodeCamp/sample.env /vagrant/freeCodeCamp/.env'
-cp /vagrant/upstart/mailhog.conf /etc/init/mailhog.conf
-sudo -u vagrant -i sh -c 'cd /vagrant/freeCodeCamp; npm run only-once'
+sudo -u vagrant -i sh -c 'cp /vagrant/upstart/mailhog.conf /etc/init/mailhog.conf'
+sudo -u vagrant -i sh -c 'cd /vagrant/freeCodeCamp; service mongod start; npm run only-once'
